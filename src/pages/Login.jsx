@@ -13,11 +13,11 @@ export default function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    if (username.trim() === "" || password.trim() === "") {
-      setError("Username atau password harus diisi!");
-    } else {
+    if (username === "johny" || password === "admin123#") {
       login();
       navigate("/checkout");
+    } else {
+      setError("user tidak ditemukan!!");
     }
   };
 
@@ -39,7 +39,9 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
           className="login-input"
         />
-        <button type="submit" className="login-btn">Login</button>
+        <button type="submit" className="login-btn">
+          Login
+        </button>
         {error && <p className="login-error">{error}</p>}
       </form>
     </div>
