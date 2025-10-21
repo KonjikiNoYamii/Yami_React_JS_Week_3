@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
 import { AuthProvider } from "./context/AuthContext";
 import Products from "./pages/Products";
@@ -10,17 +10,20 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import Navbar from "./components/Navbar";
 
 export default function App() {
+  const location = useLocation();
+  const hideNavbarPaths = ["/login"];
+  const shouldShowNavbar = !hideNavbarPaths.includes(location.pathname);
+
   return (
-    <>
-      <AuthProvider>
-        <CartProvider>
-          <Navbar />
+    <AuthProvider>
+      <CartProvider>
+        <ErrorBoundary>
+          {shouldShowNavbar && <Navbar />}
 
           <Routes>
-            <Route path="/" element={<Navigate to="/products" />} />
+            <Route path="/" element={<Navigate to="/products" replace />} />
             <Route path="/products" element={<Products />} />
             <Route path="/cart" element={<Cart />} />
-
             <Route
               path="/checkout"
               element={
@@ -30,10 +33,9 @@ export default function App() {
               }
             />
             <Route path="/login" element={<Login />} />
-            <Route path="/error" element={<ErrorBoundary />} />
           </Routes>
-        </CartProvider>
-      </AuthProvider>
-    </>
+        </ErrorBoundary>
+      </CartProvider>
+    </AuthProvider>
   );
 }
