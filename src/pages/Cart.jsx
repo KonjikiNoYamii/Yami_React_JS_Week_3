@@ -45,7 +45,7 @@ export default function Cart() {
     >
       {isOpen && (
         <div className="cart-details">
-          <h2>🛍️ Keranjang Belanja</h2>
+          <h2>Keranjang Belanja</h2>
           {cart.length === 0 ? (
             <p>Keranjang kosong~ 💔</p>
           ) : (
