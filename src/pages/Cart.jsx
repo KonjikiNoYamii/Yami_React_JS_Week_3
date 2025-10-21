@@ -10,25 +10,6 @@ export default function Cart() {
   const [isDragging, setIsDragging] = useState(false);
   const offset = useRef({ x: 0, y: 0 });
 
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    offset.current = {
-      x: e.clientX - pos.x,
-      y: e.clientY - pos.y,
-    };
-  };
-
-  const handleMouseMove = (e) => {
-    if (isDragging) {
-      setPos({
-        x: e.clientX - offset.current.x,
-        y: e.clientY - offset.current.y,
-      });
-    }
-  };
-
-  const handleMouseUp = () => setIsDragging(false);
-
   return (
     <div
       ref={cartRef}
