@@ -77,7 +77,6 @@ export default function Cart() {
         className="cart-icon"
         onMouseDown={handleMouseDown}
         onClick={() => setIsOpen((p) => !p)}
-        title="Drag untuk pindah 💫"
       >
         🛒
         {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
