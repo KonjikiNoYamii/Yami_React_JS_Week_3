@@ -1,0 +1,68 @@
+/* 🌙 Tata letak utama */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 75vh;
+  background-color: #f8f9fa;
+  padding: 30px;
+}
+
+/* ✨ Judul halaman */
+.login-title {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+/* 🧾 Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* 📥 Input */
+.login-input {
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.login-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+/* 🔘 Tombol login */
+.login-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.03);
+}
+
+/* ⚠️ Pesan error */
+.login-error {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
